@@ -5,6 +5,6 @@
     </tr>
 
 <div>
-    Novo
+    Nov
 </div>
 </table>
