@@ -4,5 +4,7 @@
         <th> <a href="showlogin.php"> Iniciar Sessão </a></th>
     </tr>
 
-
+<div>
+    Novo
+</div>
 </table>
