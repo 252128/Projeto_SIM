@@ -1,4 +1,5 @@
 <?php
+// Isto vai ter a ver só com a autenticação do utilizador
     session_start();
     if(isset($_GET["action"])){
         $action = $_GET["action"];
@@ -53,6 +54,7 @@
     </div>
     <div class="contents">
         <?php
+        // Isto vai ter a ver com as actions
             if(isset($_GET["action"])){
                 $action = $_GET["action"];
             }
