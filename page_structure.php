@@ -66,7 +66,7 @@
                     $links = "verifylogin.php";
                     break;
                 case "logout":
-                    $links = "index.php?action=homepage";
+                   // $links = "index.php?action=homepage";
                     session_unset();
             }
             include ($links);
