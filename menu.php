@@ -20,7 +20,7 @@
                     <th> Pacientes </th>
                     <th> Registo Consultas </th>
                     <th> Perfil </th>
-                    <th> <a href="page_structure.php?action=logout"> Log out </a> </th>
+                    <th> <a href="index.php?action=logout"> Log out </a> </th>
                 </tr>
             </table>
 <?php
@@ -32,7 +32,7 @@
                     <th> Início </th>
                     <th> Lista de Espera </th>
                     <th> Perfil </th>
-                    <th> <a href="page_structure.php?action=logout"> Log out </a> </th>
+                    <th> <a href="index.php?action=logout"> Log out </a> </th>
                 </tr>
             </table>
 <?php
@@ -45,7 +45,7 @@
                     <th> Utilizadores </th>
                     <th> Estatística </th>
                     <th> Perfil </th>
-                    <th> <a href="page_structure.php?action=logout"> Log out </a> </th>
+                    <th> <a href="index.php?action=logout"> Log out </a> </th>
                 </tr>
             </table>
 <?php

@@ -21,12 +21,17 @@
             if($number == 1) {
                 $_SESSION['authuser'] = 1;
                 $_SESSION['username'] = $_POST['user'];
-                $_SESSION['utilizador'] = mysqli_fetch_array($result);
+                $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["tipo"];
             }
             else {
                 $_SESSION['authuser'] = 0;
             }
             break;
+            case "logout":
+                // $links = "index.php?action=homepage";
+                session_unset();
+                header("Location: index.php");
+                break;
         }
     }
 ?>
@@ -65,9 +70,7 @@
                 case "verifylogin":
                     $links = "verifylogin.php";
                     break;
-                case "logout":
-                   // $links = "index.php?action=homepage";
-                    session_unset();
+
             }
             include ($links);
             ?>
