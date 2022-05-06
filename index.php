@@ -3,33 +3,33 @@
     session_start();
     if(isset($_GET["action"])){
         $action = $_GET["action"];
-        switch($action){
+        switch($action) {
             case "showlogin":
                 session_unset();
                 break;
             case "verifylogin":
                 $user = $_POST['user'];
                 $password = $_POST['pass'];
-                // $password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
-                $connect = mysqli_connect('localhost', 'root', '','heartsim')
+                //$password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
+                $connect = mysqli_connect('localhost', 'root', '', 'heartsim')
                 or die('Error connecting to the server: ' . mysqli_error($connect));
-                $sql = "SELECT * FROM `utilizador` WHERE USERNAME = '$user' && PASSWORD='$password'";
+                $sql = "SELECT * FROM `utilizador` WHERE USERNAME = '$user' && PASSWORD = '$password'";
 
-                $result = mysqli_query ($connect ,$sql)
+                $result = mysqli_query($connect, $sql)
                 or die('The query failed: ' . mysqli_error($connect));
                 $number = mysqli_num_rows($result); //if returns 1, then is a valid user
 
-            if($number == 1) {
-                $_SESSION['authuser'] = 1;
-                $_SESSION['username'] = $_POST['user'];
-                $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["tipo"];
-            }
-            else {
-                $_SESSION['authuser'] = 0;
-            }
-            break;
+
+                if($number == 1) {
+                       $_SESSION['authuser'] = 1;
+                       $_SESSION['username'] = $_POST['user'];
+                       $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["tipo"];
+                    }
+                    else {
+                        $_SESSION['authuser'] = 0;
+                    }
+                    break;
             case "logout":
-                // $links = "index.php?action=homepage";
                 session_unset();
                 header("Location: index.php");
                 break;
@@ -66,12 +66,15 @@
                 case "homepage":
                     $links = "homepage.php";
                     break;
-                case "showlogin":
-                    $links = "showlogin.php";
-                    break;
-                case "verifylogin":
-                    $links = "verifylogin.php";
-                    break;
+            // Perguntar ao stor se faz sentido incluir isto,
+            // visto que está relacionado com a autenticacao do utilizador
+            // e está lá em cima
+            //       case "showlogin":
+            //        $links = "showlogin.php";
+            //        break;
+            //    case "verifylogin":
+            //        $links = "verifylogin.php";
+            //        break;
 
             }
             include ($links);
