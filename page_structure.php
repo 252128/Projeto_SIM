@@ -8,10 +8,11 @@
                 break;
             case "verifylogin":
                 $user = $_POST['user'];
-                $password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
-                $connect = mysqli_connect('localhost', 'root', '','HeartSIM')
+                $password = $_POST['pass'];
+                // $password = hash("sha256", $_POST['pass']); //Forma de encriptar antes de enviar. Se não só encriptaria depois de chegar à base de dados desencriptado
+                $connect = mysqli_connect('localhost', 'root', '','heartsim')
                 or die('Error connecting to the server: ' . mysqli_error($connect));
-                $sql = "SELECT`Nome` FROM `Utilizador` WHERE USERNAME = '$user' && PASSWORD='$password'";
+                $sql = "SELECT `Nome` FROM `utilizador` WHERE USERNAME = '$user' && PASSWORD='$password'";
 
                 $result = mysqli_query ($connect ,$sql)
                 or die('The query failed: ' . mysqli_error($connect));
@@ -20,7 +21,7 @@
             if($number == 1) {
                 $_SESSION['authuser'] = 1;
                 $_SESSION['username'] = $_POST['user'];
-                $_SESSION['utilizador'] = $result.tipo;
+                $_SESSION['utilizador'] = mysqli_fetch_array($result['Tipo']);
             }
             else {
                 $_SESSION['authuser'] = 0;

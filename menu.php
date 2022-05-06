@@ -14,7 +14,7 @@
     switch($_SESSION['utilizador']){
         case 'MF':
 ?>
-            <table>
+            <table width="100%" border="1">
                 <tr>
                     <th> Início </th>
                     <th> Pacientes </th>
@@ -27,7 +27,7 @@
         break;
         case 'MHC' || 'MHD':
 ?>
-            <table>
+            <table width="100%" border="1">
                 <tr>
                     <th> Início </th>
                     <th> Lista de Espera </th>
@@ -39,7 +39,7 @@
             break;
         case 'Adm':
 ?>
-            <table>
+            <table width="100%" border="1">
                 <tr>
                     <th> Início </th>
                     <th> Utilizadores </th>
