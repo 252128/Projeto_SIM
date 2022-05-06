@@ -1,5 +1,5 @@
 
-<form method="post" style="text-align:center">
+<form method="post" style="text-align:center" action="page_structure.php?action=verifylogin">
     <p>
         Utilizador:
         <input type="text" name="user">
