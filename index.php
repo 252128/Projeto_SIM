@@ -2,6 +2,7 @@
 // Isto vai ter a ver só com a autenticação do utilizador
     session_start();
     if(isset($_GET["action"])){
+        $islogin = false;
         $action = $_GET["action"];
         switch($action) {
             case "showlogin":
@@ -22,8 +23,9 @@
 
                 if($number == 1) {
                        $_SESSION['authuser'] = 1;
+                       $islogin = true;
                        $_SESSION['username'] = $_POST['user'];
-                       $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["tipo"];
+                       $_SESSION['utilizador'] = mysqli_fetch_assoc($result)["Tipo"];
                     }
                     else {
                         $_SESSION['authuser'] = 0;

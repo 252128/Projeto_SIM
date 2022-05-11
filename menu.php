@@ -10,16 +10,16 @@
 </table>
 
 <?php
-    }
-    switch($_SESSION['utilizador']){
-        case 'MF':
+    } else{
+        switch($_SESSION['utilizador']){
+            case 'MF':
 ?>
             <table width="100%" border="1">
                 <tr>
                     <th> Início </th>
-                    <th> Pacientes </th>
-                    <th> Registo Consultas </th>
-                    <th> Perfil </th>
+                    <th> <a href="index.php?action=pacientes"> Pacientes </a> </th>
+                    <th> <a href="index.php?action=RegistarConsulta"> Registo Consultas </a></th>
+                    <th> <a href="index.php?action=perfil"> Perfil </a> </th>
                     <th> <a href="index.php?action=logout"> Log out </a> </th>
                 </tr>
             </table>
@@ -50,4 +50,5 @@
             </table>
 <?php
             break;
+    }
     }
