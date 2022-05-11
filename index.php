@@ -68,16 +68,15 @@
                 case "homepage":
                     $links = "homepage.php";
                     break;
-            // Perguntar ao stor se faz sentido incluir isto,
-            // visto que está relacionado com a autenticacao do utilizador
-            // e está lá em cima
-            //       case "showlogin":
-            //        $links = "showlogin.php";
-            //        break;
-            //    case "verifylogin":
-            //        $links = "verifylogin.php";
-            //        break;
-
+                case "paciente":
+                    $links = "pacientes.php";
+                    break;
+                case "RegistarConsulta":
+                    $links = "RegistarConsulta.php";
+                    break;
+                case "Perfil":
+                    $links = "perfil.php";
+                    break;
             }
             include ($links);
             ?>
